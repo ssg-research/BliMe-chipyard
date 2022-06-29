@@ -20,3 +20,7 @@ tags
 env-riscv-tools.sh
 env-esp-tools.sh
 .bsp/
+.bloop/
+.metals/
+**/metals.sbt
+.vscode/
