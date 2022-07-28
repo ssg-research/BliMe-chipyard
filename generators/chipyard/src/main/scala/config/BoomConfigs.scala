@@ -18,6 +18,10 @@ class LargeBoomConfig extends Config(
   new boom.common.WithNLargeBooms(1) ++                          // large boom config
   new chipyard.config.AbstractConfig)
 
+class Large8BoomConfig extends Config(
+  new boom.common.WithNLarge8Booms(1) ++                          // large boom config with SystemBusKey beatBytes=8 instead of 16
+  new chipyard.config.AbstractConfig)
+
 class MegaBoomConfig extends Config(
   new boom.common.WithNMegaBooms(1) ++                           // mega boom config
   new chipyard.config.AbstractConfig)
