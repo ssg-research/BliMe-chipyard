@@ -4,7 +4,7 @@
 	shallow = true
 [submodule "testchipip"]
 	path = generators/testchipip
-	url = https://github.com/ucb-bar/testchipip.git
+	url = git@gitlab.com:ssg-research/platsec/attack-tolerant-execution/blinded-testchipip.git
 	shallow = true
 [submodule "barstools"]
 	path = tools/barstools
@@ -36,7 +36,7 @@
 	shallow = true
 [submodule "generators/block-inclusivecache-sifive"]
 	path = generators/sifive-cache
-	url = https://github.com/sifive/block-inclusivecache-sifive.git
+	url = git@gitlab.com:ssg-research/platsec/attack-tolerant-execution/blinded-block-inclusivecache-sifive.git
 	shallow = true
 [submodule "toolchains/riscv-tools/riscv-gnu-toolchain"]
 	path = toolchains/riscv-tools/riscv-gnu-toolchain
@@ -56,7 +56,7 @@
 	shallow = true
 [submodule "toolchains/riscv-tools/riscv-tests"]
 	path = toolchains/riscv-tools/riscv-tests
-	url = https://github.com/riscv/riscv-tests.git
+	url = git@gitlab.com:ssg-research/platsec/attack-tolerant-execution/blinded-riscv-tests.git
 	shallow = true
 [submodule "toolchains/riscv-tools/riscv-openocd"]
 	path = toolchains/riscv-tools/riscv-openocd
