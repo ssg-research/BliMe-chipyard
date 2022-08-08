@@ -56,7 +56,7 @@
 	shallow = true
 [submodule "toolchains/riscv-tools/riscv-tests"]
 	path = toolchains/riscv-tools/riscv-tests
-	url = git@gitlab.com:ssg-research/platsec/attack-tolerant-execution/blinded-riscv-tests.git
+	url = git@gitlab.com:ssg-research/platsec/attack-tolerant-execution/riscv-repo-forks/blinded-riscv-tests.git
 	shallow = true
 [submodule "toolchains/riscv-tools/riscv-openocd"]
 	path = toolchains/riscv-tools/riscv-openocd
