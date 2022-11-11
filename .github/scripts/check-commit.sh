@@ -9,7 +9,6 @@ set -ex
 SCRIPT_DIR="$( cd "$( dirname "$0" )" && pwd )"
 source $SCRIPT_DIR/defaults.sh
 
-# enter bhd repo
 cd $LOCAL_CHIPYARD_DIR
 
 # ignore the private vlsi submodules
@@ -17,18 +16,15 @@ git config submodule.vlsi/hammer-cadence-plugins.update none
 git config submodule.vlsi/hammer-mentor-plugins.update none
 git config submodule.vlsi/hammer-synopsys-plugins.update none
 
+# initialize submodules and get the hashes
+git submodule update --init
+status=$(git submodule status)
+
 all_names=()
 
 
 search_submodule() {
     echo "Running check on submodule $submodule in $dir"
-    # Initialize submodule and get the hashes
-    git submodule update --init $dir/$submodule
-    git -C $dir/$submodule fetch --unshallow
-    git -C $dir/$submodule config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
-    git -C $dir/$submodule fetch origin
-
-    status=$(git submodule status)
     hash=$(echo "$status" | grep "$dir.*$submodule " | awk '{print$1}' | grep -o "[[:alnum:]]*")
     for branch in "${branches[@]}"
     do
@@ -51,18 +47,27 @@ search () {
     done
 }
 
-submodules=("cva6" "boom" "ibex" "gemmini" "hwacha" "icenet" "nvdla" "rocket-chip" "sha3" "sifive-blocks" "sifive-cache" "testchipip" "riscv-sodor")
+submodules=("cva6" "boom" "ibex" "gemmini" "hwacha" "icenet" "nvdla" "rocket-chip" "sha3" "sifive-blocks" "sifive-cache" "testchipip" "riscv-sodor" "mempress")
 dir="generators"
 branches=("master" "main" "dev")
 search
 
-submodules=("riscv-gnu-toolchain" "riscv-isa-sim" "riscv-pk" "riscv-tests")
+submodules=("esp-tools-feedstock")
+dir="toolchains/esp-tools"
+branches=("main")
+search
+
+submodules=("riscv-isa-sim" "riscv-pk" "riscv-tests")
 dir="toolchains/esp-tools"
 branches=("master")
 search
 
+submodules=("riscv-tools-feedstock")
+dir="toolchains/riscv-tools"
+branches=("main")
+search
 
-submodules=("riscv-gnu-toolchain" "riscv-isa-sim" "riscv-pk" "riscv-tests")
+submodules=("riscv-isa-sim" "riscv-pk" "riscv-tests")
 dir="toolchains/riscv-tools"
 branches=("master")
 search
@@ -73,7 +78,7 @@ dir="toolchains/riscv-tools"
 branches=("riscv")
 search
 
-submodules=("qemu" "libgloss")
+submodules=("libgloss")
 dir="toolchains"
 branches=("master")
 search
@@ -88,14 +93,9 @@ dir="tools"
 branches=("master" "dev")
 search
 
-submodules=("dromajo-src")
-dir="tools/dromajo"
-branches=("master")
-search
-
 submodules=("firesim")
 dir="sims"
-branches=("master" "main" "dev")
+branches=("master" "main" "dev" "1.13.x")
 search
 
 submodules=("hammer")
@@ -105,7 +105,7 @@ search
 
 submodules=("fpga-shells")
 dir="fpga"
-branches=("master")
+branches=("main")
 search
 
 # turn off verbose printing to make this easier to read

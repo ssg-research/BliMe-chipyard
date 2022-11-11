@@ -4,9 +4,9 @@
 
 ## Quick Links
 
-* **STABLE DOCUMENTATION**: https://chipyard.readthedocs.io/
-* **USER QUESTION FORUM**: https://groups.google.com/forum/#!forum/chipyard
-* **BUGS AND FEATURE-REQUESTS**: https://github.com/ucb-bar/chipyard/issues
+* **Stable Documentation**: https://chipyard.readthedocs.io/
+* **User Question Forum**: https://groups.google.com/forum/#!forum/chipyard
+* **Bugs and Feature Requests**: https://github.com/ucb-bar/chipyard/issues
 
 ## Using Chipyard
 
@@ -24,8 +24,8 @@ Chipyard is actively developed in the [Berkeley Architecture Research Group][ucb
 
 * Chipyard Stable Documentation: https://chipyard.readthedocs.io/
 * Chipyard (x FireSim) Tutorial: https://fires.im/tutorial
-* Chipyard Basics slides: https://fires.im/micro21-slides-pdf/02_chipyard_basics.pdf
-* Chipyard Tutorial Exercise slides: https://fires.im/micro21-slides-pdf/03_building_custom_socs.pdf
+* Chipyard Basics slides: https://fires.im/isca22-slides-pdf/02_chipyard_basics.pdf
+* Chipyard Tutorial Exercise slides: https://fires.im/isca22-slides-pdf/03_building_custom_socs.pdf
 
 ## Need help?
 
@@ -67,7 +67,7 @@ These additional publications cover many of the internal components used in Chip
       * **SonicBOOM (BOOMv3)**: J. Zhao, et al., *CARRV'20*. [PDF](https://carrv.github.io/2020/papers/CARRV2020_paper_15_Zhao.pdf).
       * **COBRA (BOOM Branch Prediction)**: J. Zhao, et al., *ISPASS'21*. [PDF](https://ieeexplore.ieee.org/document/9408173).
     * **Hwacha**: Y. Lee, et al., *ESSCIRC'14*. [PDF](http://hwacha.org/papers/riscv-esscirc2014.pdf).
-    * **Gemmini**: H. Genc, et al., *arXiv*. [PDF](https://arxiv.org/pdf/1911.09925).
+    * **Gemmini**: H. Genc, et al., *DAC'21*. [PDF](https://arxiv.org/pdf/1911.09925).
 * **Sims**
     * **FireSim**: S. Karandikar, et al., *ISCA'18*. [PDF](https://sagark.org/assets/pubs/firesim-isca2018.pdf).
         * **FireSim Micro Top Picks**: S. Karandikar, et al., *IEEE Micro, Top Picks 2018*. [PDF](https://sagark.org/assets/pubs/firesim-micro-top-picks2018.pdf).
