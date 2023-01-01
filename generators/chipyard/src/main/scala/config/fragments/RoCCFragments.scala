@@ -6,7 +6,7 @@ import freechips.rocketchip.config.{Field, Parameters, Config}
 import freechips.rocketchip.tile._
 import freechips.rocketchip.diplomacy._
 
-import hwacha.{Hwacha}
+// import hwacha.{Hwacha}
 import gemmini._
 
 import chipyard.{TestSuitesKey, TestSuiteHelper}
@@ -45,31 +45,31 @@ class WithMultiRoCCFromBuildRoCC(harts: Int*) extends Config((site, here, up) =>
  *
  * @param harts harts to specify which will get a Hwacha
  */
-class WithMultiRoCCHwacha(harts: Int*) extends Config(
-  new chipyard.config.WithHwachaTest ++
-  new Config((site, here, up) => {
-    case MultiRoCCKey => {
-      up(MultiRoCCKey, site) ++ harts.distinct.map{ i =>
-        (i -> Seq((p: Parameters) => {
-          val hwacha = LazyModule(new Hwacha()(p))
-          hwacha
-        }))
-      }
-    }
-  })
-)
+// class WithMultiRoCCHwacha(harts: Int*) extends Config(
+//   new chipyard.config.WithHwachaTest ++
+//   new Config((site, here, up) => {
+//     case MultiRoCCKey => {
+//       up(MultiRoCCKey, site) ++ harts.distinct.map{ i =>
+//         (i -> Seq((p: Parameters) => {
+//           val hwacha = LazyModule(new Hwacha()(p))
+//           hwacha
+//         }))
+//       }
+//     }
+//   })
+// )
 
-class WithHwachaTest extends Config((site, here, up) => {
-  case TestSuitesKey => (tileParams: Seq[TileParams], suiteHelper: TestSuiteHelper, p: Parameters) => {
-    up(TestSuitesKey).apply(tileParams, suiteHelper, p)
-    import hwacha.HwachaTestSuites._
-    suiteHelper.addSuites(rv64uv.map(_("p")))
-    suiteHelper.addSuites(rv64uv.map(_("vp")))
-    suiteHelper.addSuite(rv64sv("p"))
-    suiteHelper.addSuite(hwachaBmarks)
-    "SRC_EXTENSION = $(base_dir)/hwacha/$(src_path)/*.scala" + "\nDISASM_EXTENSION = --extension=hwacha"
-  }
-})
+// class WithHwachaTest extends Config((site, here, up) => {
+//   case TestSuitesKey => (tileParams: Seq[TileParams], suiteHelper: TestSuiteHelper, p: Parameters) => {
+//     up(TestSuitesKey).apply(tileParams, suiteHelper, p)
+//     import hwacha.HwachaTestSuites._
+//     suiteHelper.addSuites(rv64uv.map(_("p")))
+//     suiteHelper.addSuites(rv64uv.map(_("vp")))
+//     suiteHelper.addSuite(rv64sv("p"))
+//     suiteHelper.addSuite(hwachaBmarks)
+//     "SRC_EXTENSION = $(base_dir)/hwacha/$(src_path)/*.scala" + "\nDISASM_EXTENSION = --extension=hwacha"
+//   }
+// })
 
 /**
   * The MultiRoCCGemmini fragment functions similarly to the

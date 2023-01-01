@@ -38,11 +38,11 @@ class FFTRocketConfig extends Config(
   new chipyard.config.AbstractConfig)
 // DOC include end: FFTRocketConfig
 
-class HwachaRocketConfig extends Config(
-  new chipyard.config.WithHwachaTest ++
-  new hwacha.DefaultHwachaConfig ++                              // use Hwacha vector accelerator
-  new freechips.rocketchip.subsystem.WithNBigCores(1) ++
-  new chipyard.config.AbstractConfig)
+// class HwachaRocketConfig extends Config(
+//   new chipyard.config.WithHwachaTest ++
+//   new hwacha.DefaultHwachaConfig ++                              // use Hwacha vector accelerator
+//   new freechips.rocketchip.subsystem.WithNBigCores(1) ++
+//   new chipyard.config.AbstractConfig)
 
 // DOC include start: GemminiRocketConfig
 class GemminiRocketConfig extends Config(
