@@ -142,7 +142,8 @@ lazy val testchipip = (project in file("generators/testchipip"))
   .settings(commonSettings)
 
 lazy val chipyard = (project in file("generators/chipyard"))
-  .dependsOn(testchipip, rocketchip, boom, hwacha, sifive_blocks, sifive_cache, iocell,
+  // .dependsOn(testchipip, rocketchip, boom, hwacha, sifive_blocks, sifive_cache, iocell,
+  .dependsOn(testchipip, rocketchip, boom, sifive_blocks, sifive_cache, iocell,
     sha3, // On separate line to allow for cleaner tutorial-setup patches
     dsptools, `rocket-dsp-utils`,
     gemmini, icenet, tracegen, cva6, nvdla, sodor, ibex, fft_generator)
@@ -164,10 +165,10 @@ lazy val icenet = (project in file("generators/icenet"))
   .settings(libraryDependencies ++= rocketLibDeps.value)
   .settings(commonSettings)
 
-lazy val hwacha = (project in file("generators/hwacha"))
-  .dependsOn(rocketchip)
-  .settings(libraryDependencies ++= rocketLibDeps.value)
-  .settings(commonSettings)
+// lazy val hwacha = (project in file("generators/hwacha"))
+//   .dependsOn(rocketchip)
+//   .settings(libraryDependencies ++= rocketLibDeps.value)
+//   .settings(commonSettings)
 
 lazy val boom = (project in file("generators/boom"))
   .dependsOn(testchipip, rocketchip)
