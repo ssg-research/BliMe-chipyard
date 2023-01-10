@@ -1,0 +1,15 @@
+diff --git a/src/main/scala/ctrl.scala b/src/main/scala/ctrl.scala
+index b02e281..7ace2ff 100644
+--- a/src/main/scala/ctrl.scala
++++ b/src/main/scala/ctrl.scala
+@@ -120,8 +120,8 @@ class CtrlModule(val max_streams: Int, val idx_w: Int, val single_l2tl: Boolean)
+     is (ctrl_idle.asUInt) {
+       when (io.rocc_in.fire) {
+         val funct = io.rocc_in.bits.inst.funct
+-        val rs1_val = io.rocc_in.bits.rs1
+-        val rs2_val = io.rocc_in.bits.rs2
++        val rs1_val = io.rocc_in.bits.rs1.bits
++        val rs2_val = io.rocc_in.bits.rs2.bits
+ 
+         when (funct === FUNCT_PARSE_GLOBAL_STREAM_INFO) {
+           global_info_val := true.B
