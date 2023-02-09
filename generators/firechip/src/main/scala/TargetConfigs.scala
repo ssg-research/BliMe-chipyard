@@ -196,11 +196,11 @@ class FireSimLargeBoomAndRocketConfig extends Config(
 //******************************************************************
 // Gemmini NN accel config, base off chipyard's GemminiRocketConfig
 //******************************************************************
-class FireSimGemminiRocketConfig extends Config(
-  new WithDefaultFireSimBridges ++
-  new WithDefaultMemModel ++
-  new WithFireSimConfigTweaks ++
-  new chipyard.GemminiRocketConfig)
+// class FireSimGemminiRocketConfig extends Config(
+//   new WithDefaultFireSimBridges ++
+//   new WithDefaultMemModel ++
+//   new WithFireSimConfigTweaks ++
+//   new chipyard.GemminiRocketConfig)
 
 //******************************************************************
 // Configuration with Ring topology SystemBus
