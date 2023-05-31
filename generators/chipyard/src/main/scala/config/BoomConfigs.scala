@@ -26,6 +26,7 @@ class Large8BoomGem52Channel4BankConfig extends Config(
   new boom.common.WithNLarge8BoomsGem5(1) ++
   new freechips.rocketchip.subsystem.WithNMemoryChannels(2) ++
   new freechips.rocketchip.subsystem.WithNBanks(4) ++
+  new freechips.rocketchip.subsystem.WithInclusiveCache(capacityKB=256) ++
   new chipyard.config.AbstractConfig)
 
 class MegaBoomConfig extends Config(
