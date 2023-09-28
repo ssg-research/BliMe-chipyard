@@ -1,10 +1,9 @@
 [submodule "rocket-chip"]
 	path = generators/rocket-chip
-	url = git@gitlab.com:ssg-research/platsec/attack-tolerant-execution/blinded-rocket-chip.git
-	branch = gemmini-blinded-multiclient
+	url = https://github.com/ssg-research/BliMe-rocket-chip.git
 [submodule "testchipip"]
 	path = generators/testchipip
-	url = git@gitlab.com:ssg-research/platsec/attack-tolerant-execution/blinded-testchipip.git
+	url = https://github.com/ssg-research/BliMe-testchipip.git
 [submodule "barstools"]
 	path = tools/barstools
 	url = https://github.com/ucb-bar/barstools.git
@@ -13,7 +12,7 @@
 	url = https://github.com/ucb-bar/riscv-torture.git
 [submodule "generators/boom"]
 	path = generators/boom
-	url = git@gitlab.com:ssg-research/platsec/attack-tolerant-execution/blinded-riscv-boom.git
+	url = https://github.com/ssg-research/BliMe-riscv-boom.git
 [submodule "generators/sifive-blocks"]
 	path = generators/sifive-blocks
 	url = https://github.com/chipsalliance/rocket-chip-blocks.git
@@ -28,7 +27,7 @@
 	url = https://github.com/firesim/icenet.git
 [submodule "generators/block-inclusivecache-sifive"]
 	path = generators/sifive-cache
-	url = git@gitlab.com:ssg-research/platsec/attack-tolerant-execution/blinded-block-inclusivecache-sifive.git
+	url = https://github.com/ssg-research/BliMe-block-inclusivecache-sifive.git
 [submodule "vlsi/hammer"]
 	path = vlsi/hammer
 	url = https://github.com/ucb-bar/hammer.git
@@ -101,7 +100,7 @@
 	url = https://github.com/ucb-bar/FFTGenerator.git
 [submodule "toolchains/riscv-tools/riscv-tests"]
 	path = toolchains/riscv-tools/riscv-tests
-	url = git@gitlab.com:ssg-research/platsec/attack-tolerant-execution/riscv-repo-forks/blinded-riscv-tests.git
+	url = https://github.com/ssg-research/BliMe-riscv-tests.git
 [submodule "toolchains/riscv-tools/riscv-pk"]
 	path = toolchains/riscv-tools/riscv-pk
 	url = https://github.com/riscv-software-src/riscv-pk.git
