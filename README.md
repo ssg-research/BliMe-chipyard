@@ -37,10 +37,9 @@ git switch <Either the `bc-version-bump` or the `blinded-multiclient` branch>
 source ./env.sh
 conda env list #To ensure everything's in order
 
-#Simulation (BliMe-BOOM)
+#Simulation (BliMe-Gemmini + BliMe-Boom)
 cd sims/verilator
-make -j32 CONFIG=Large8BoomConfig
-make -j32 run-binary-debug CONFIG=Large8BoomConfig VERILATOR_THREADS=32 BINARY=$RISCV/path/to/elf/file/to/test.riscv
+make -j32 CONFIG=CustomGemminiSoCConfig VERILATOR_THREADS=32 BINARY=$RISCV/riscv64-unknown-elf/share/riscv-tests/isa/rv64ui-p-simple
 #Look in the `output` directory for a VCD file
 ```
 
