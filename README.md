@@ -8,9 +8,83 @@
 * **User Question Forum**: https://groups.google.com/forum/#!forum/chipyard
 * **Bugs and Feature Requests**: https://github.com/ucb-bar/chipyard/issues
 
-## Using Chipyard
+## Using Downstream (Blinded) Chipyard
 
 To get started using Chipyard, see the stable documentation on the Chipyard documentation site: https://chipyard.readthedocs.io/
+
+Some useful links include (though you may need to look at older versions):
+
+- https://chipyard.readthedocs.io/en/stable/Chipyard-Basics/Initial-Repo-Setup.html
+
+- https://chipyard.readthedocs.io/en/stable/Simulation/Software-RTL-Simulation.html
+
+As a summary, to run Downstream (Blinded) Chipyard when starting out, you'll likely want to do something similar to the following:
+
+```
+#One-Time Setup
+#Install Conda onto your system with Miniforge (https://github.com/conda-forge/miniforge/#download)
+#Then do the following:
+conda install -n base conda-lock=1.4
+conda activate base
+
+#Per-Repo-Clone Setup
+git clone git@gitlab.com:ssg-research/platsec/attack-tolerant-execution/blinded-chipyard.git
+cd chipyard
+git switch <Either the `bc-version-bump` or the `blinded-multiclient` branch>
+./build-setup.sh riscv-tools
+
+#Per-Session Setup
+source ./env.sh
+conda env list #To ensure everything's in order
+
+#Simulation (BliMe-BOOM)
+cd sims/verilator
+make -j32 CONFIG=Large8BoomConfig
+make -j32 run-binary-debug CONFIG=Large8BoomConfig VERILATOR_THREADS=32 BINARY=$RISCV/path/to/elf/file/to/test.riscv
+#Look in the `output` directory for a VCD file
+```
+
+## Using Upstream Chipyard
+
+To get started using Chipyard, see the stable documentation on the Chipyard documentation site: https://chipyard.readthedocs.io/
+
+Some useful links include:
+
+- https://chipyard.readthedocs.io/en/stable/Chipyard-Basics/Initial-Repo-Setup.html
+
+- https://chipyard.readthedocs.io/en/stable/Simulation/Software-RTL-Simulation.html
+
+As a summary, to run upstream Chipyard when starting out, you'll likely want to do something similar to the following:
+
+```
+#One-Time Setup
+#Install Conda onto your system with Miniforge (https://github.com/conda-forge/miniforge/#download)
+#Then do the following:
+conda install -n base conda-lock=1.4
+conda activate base
+
+#Per-Repo-Clone Setup
+git clone https://github.com/ucb-bar/chipyard.git
+cd chipyard
+git checkout <Latest chipyard git tag here>
+./build-setup.sh riscv-tools
+
+#Per-Session Setup
+source ./env.sh
+conda env list #To ensure everything's in order
+
+#Simulation (Rocket)
+cd sims/verilator
+make -j32
+make -j32 run-binary-debug VERILATOR_THREADS=32 BINARY=$RISCV/path/to/elf/file/to/test.riscv
+#Look in the `output` directory for a VCD file
+
+#Simulation (BOOM)
+cd sims/verilator
+make -j32 CONFIG=LargeBoomConfig
+make -j32 run-binary-debug CONFIG=LargeBoomConfig VERILATOR_THREADS=32 BINARY=$RISCV/path/to/elf/file/to/test.riscv
+#Look in the `output` directory for a VCD file
+```
 
 ## What is Chipyard
 
