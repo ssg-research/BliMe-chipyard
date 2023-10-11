@@ -1,6 +1,7 @@
 [submodule "rocket-chip"]
 	path = generators/rocket-chip
 	url = git@gitlab.com:ssg-research/platsec/attack-tolerant-execution/blinded-rocket-chip.git
+	branch = gemmini-blinded-multiclient
 [submodule "testchipip"]
 	path = generators/testchipip
 	url = git@gitlab.com:ssg-research/platsec/attack-tolerant-execution/blinded-testchipip.git
