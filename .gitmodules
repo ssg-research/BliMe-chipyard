@@ -60,7 +60,7 @@
 	url = https://github.com/ucb-bar/coremark-workload.git
 [submodule "generators/gemmini"]
 	path = generators/gemmini
-	url = git@gitlab.com:ssg-research/platsec/attack-tolerant-execution/blinded-gemmini.git
+	url = https://github.com/ssg-research/BliMe-Dolma.git
 	branch = gemmini-blinded-multiclient
 [submodule "software/firemarshal"]
 	path = software/firemarshal
