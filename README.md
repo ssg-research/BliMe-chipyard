@@ -28,9 +28,9 @@ conda install -n base conda-lock=1.4
 conda activate base
 
 #Per-Repo-Clone Setup
-git clone git@gitlab.com:ssg-research/platsec/attack-tolerant-execution/blinded-chipyard.git
+git clone <this repo's url>
 cd chipyard
-git switch <Either the `bc-version-bump` or the `blinded-multiclient` branch>
+git switch <Either the `bc-version-bump` or the `blime-multiclient` branch>
 ./build-setup.sh riscv-tools
 
 #Per-Session Setup
